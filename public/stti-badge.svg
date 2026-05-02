@@ -1,0 +1,9 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="42" fill="#172554"/>
+  <circle cx="100" cy="92" r="54" fill="#F6C343"/>
+  <path d="M100 42L145 66V100C145 127 126 151 100 158C74 151 55 127 55 100V66L100 42Z" fill="#172554"/>
+  <path d="M72 80L100 64L128 80L100 96L72 80Z" fill="#F6C343"/>
+  <path d="M82 92V114C82 122 90 129 100 129C110 129 118 122 118 114V92L100 103L82 92Z" fill="white"/>
+  <rect x="82" y="143" width="36" height="8" rx="4" fill="#F6C343"/>
+  <text x="100" y="181" text-anchor="middle" font-family="Arial" font-size="18" font-weight="700" fill="white">STTI SS</text>
+</svg>
