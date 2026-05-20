@@ -5,22 +5,16 @@ import { loginUser } from '../utils/auth';
 
 function LoginPage({ onLogin }) {
   const [role, setRole] = useState('admin');
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('admin123');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleRoleChange = (selectedRole) => {
-    setRole(selectedRole);
-    setMessage('');
+ const handleRoleChange = (selectedRole) => {
+  setRole(selectedRole);
+  setMessage('');
 
-    if (selectedRole === 'admin') {
-      setUsername('admin');
-      setPassword('admin123');
-      return;
-    }
-
-    setUsername('user');
-    setPassword('user123');
+  setUsername('');
+  setPassword('');
   };
 
   const handleSubmit = (event) => {
