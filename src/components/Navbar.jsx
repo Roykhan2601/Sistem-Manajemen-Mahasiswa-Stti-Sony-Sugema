@@ -40,14 +40,7 @@ function Navbar({ activePage, setActivePage, currentUser, onLogout }) {
         ))}
       </nav>
 
-      <div className="sidebar-footer">
-        <BookOpen size={18} />
-        <div>
-          <strong>UTS Framework</strong>
-          <span>React, OOP, CRUD, LocalStorage</span>
-        </div>
-      </div>
-
+    
       <button className="logout-btn" onClick={onLogout}>
         <LogOut size={18} /> Keluar
       </button>

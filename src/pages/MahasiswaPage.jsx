@@ -138,7 +138,7 @@ function MahasiswaPage({ mahasiswa, setMahasiswa, currentUser }) {
         <div className="panel-card access-note">
           <p className="eyebrow">Mode User</p>
           <h3>Akses Lihat Data Mahasiswa</h3>
-          <p>Anda masuk sebagai user. Anda dapat melihat dashboard, mencari, memfilter, dan membuka detail mahasiswa. Fitur tambah, edit, hapus, dan reset data hanya untuk admin.</p>
+          <p>Anda masuk sebagai user. Anda hanya dapat melihat dashboard, mencari, memfilter, dan membuka detail mahasiswa. Fitur tambah, edit, hapus, dan reset data dinonaktifkan untuk user.</p>
         </div>
       )}
 

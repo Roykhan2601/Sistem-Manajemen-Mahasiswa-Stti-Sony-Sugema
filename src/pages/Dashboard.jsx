@@ -25,7 +25,7 @@ function Dashboard({ mahasiswa }) {
 
       <div className="stats-grid">
         <StatCard label="Total Mahasiswa" value={mahasiswa.length} icon={<UsersRound size={26} />} note="Data lokal tersimpan" />
-        <StatCard label="Jurusan" value={jurusanList.length} icon={<BookOpenText size={26} />} note="Program studi aktif" />
+        <StatCard label="Program Studi" value={jurusanList.length} icon={<BookOpenText size={26} />} note="Program studi aktif" />
         <StatCard label="Kelas" value={kelasList.length} icon={<Layers3 size={26} />} note="Kelas terdaftar" />
         <StatCard label="Mahasiswa Aktif" value={mahasiswaAktif} icon={<GraduationCap size={26} />} note="Status aktif" />
       </div>

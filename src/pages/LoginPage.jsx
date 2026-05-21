@@ -4,25 +4,21 @@ import { campusProfile } from '../data/sampleData';
 import { loginUser } from '../utils/auth';
 
 function LoginPage({ onLogin }) {
-  const [role, setRole] = useState('admin');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
 
- const handleRoleChange = (selectedRole) => {
-  setRole(selectedRole);
-  setMessage('');
-
-  setUsername('');
-  setPassword('');
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const loginResult = loginUser(username.trim(), password.trim(), role);
+    if (!username.trim() || !password.trim()) {
+      setMessage('Username dan password wajib diisi.');
+      return;
+    }
+
+    const loginResult = loginUser(username.trim(), password.trim());
     if (!loginResult) {
-      setMessage('Username, password, atau pilihan role tidak sesuai.');
+      setMessage('Username atau password salah.');
       return;
     }
 
@@ -45,51 +41,38 @@ function LoginPage({ onLogin }) {
         <div className="login-info-grid">
           <div>
             <strong>Admin</strong>
-            <span>Kelola, tambah, edit, dan hapus data mahasiswa.</span>
+            <span>Login dengan akun admin untuk menambah, mengedit, dan menghapus data mahasiswa.</span>
           </div>
           <div>
             <strong>User</strong>
-            <span>Lihat dashboard, daftar mahasiswa, filter, pencarian, dan detail data.</span>
+            <span>Login dengan akun user untuk melihat dashboard, daftar mahasiswa, pencarian, filter, dan detail data.</span>
           </div>
         </div>
       </section>
 
-      <section className="login-card">
+      <section className="login-card single-login-card">
         <div className="login-card-header">
           <div className="brand-logo login-logo">
             <UserRound size={28} />
           </div>
           <div>
             <p className="eyebrow">Login Aplikasi</p>
-            <h2>Masuk sebagai {role === 'admin' ? 'Admin' : 'User'}</h2>
+            <h2>Masuk ke Aplikasi</h2>
           </div>
         </div>
 
-        <div className="role-switcher">
-          <button
-            type="button"
-            className={role === 'admin' ? 'role-btn active' : 'role-btn'}
-            onClick={() => handleRoleChange('admin')}
-          >
-            Admin
-          </button>
-          <button
-            type="button"
-            className={role === 'user' ? 'role-btn active' : 'role-btn'}
-            onClick={() => handleRoleChange('user')}
-          >
-            User
-          </button>
-        </div>
-
-        <form onSubmit={handleSubmit} className="login-form">
+        <form onSubmit={handleSubmit} className="login-form" autoComplete="off">
           <label>
             Username
             <input
               type="text"
               value={username}
-              onChange={(event) => setUsername(event.target.value)}
+              onChange={(event) => {
+                setUsername(event.target.value);
+                setMessage('');
+              }}
               placeholder="Masukkan username"
+              autoComplete="off"
             />
           </label>
 
@@ -98,8 +81,12 @@ function LoginPage({ onLogin }) {
             <input
               type="password"
               value={password}
-              onChange={(event) => setPassword(event.target.value)}
+              onChange={(event) => {
+                setPassword(event.target.value);
+                setMessage('');
+              }}
               placeholder="Masukkan password"
+              autoComplete="new-password"
             />
           </label>
 
@@ -109,11 +96,6 @@ function LoginPage({ onLogin }) {
             <LockKeyhole size={18} /> Masuk ke Aplikasi
           </button>
         </form>
-
-        <div className="credential-box">
-          <p><strong>Akun Admin:</strong> admin / admin123</p>
-          <p><strong>Akun User:</strong> user / user123</p>
-        </div>
       </section>
     </main>
   );

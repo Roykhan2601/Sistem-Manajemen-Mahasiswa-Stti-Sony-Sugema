@@ -2,9 +2,9 @@ import { akunLogin } from '../data/sampleData';
 
 const SESSION_KEY = 'stti_session_user';
 
-export function loginUser(username, password, role) {
+export function loginUser(username, password) {
   const foundUser = akunLogin.find((item) => {
-    return item.username === username && item.password === password && item.role === role;
+    return item.username === username && item.password === password;
   });
 
   if (!foundUser) {

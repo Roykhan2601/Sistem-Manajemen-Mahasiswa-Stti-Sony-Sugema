@@ -30,16 +30,50 @@ export const jurusanList = [
   'Teknik Komputer'
 ];
 
-export const kelasList = [
-  'TI 1A',
-  'TI 1B',
-  'TI 2A',
-  'TI 2B',
-  'SI 1A',
-  'SI 2A',
-  'MI 3A',
-  'TK 1A'
-];
+export const kelasByJurusan = {
+  'Teknik Informatika': [
+    'TI 1A',
+    'TI 1B',
+    'TI 2A',
+    'TI 2B',
+    'TI 3A',
+    'TI 3B',
+    'TI 4A',
+    'TI 4B'
+  ],
+  'Sistem Informasi': [
+    'SI 1A',
+    'SI 1B',
+    'SI 2A',
+    'SI 2B',
+    'SI 3A',
+    'SI 3B',
+    'SI 4A',
+    'SI 4B'
+  ],
+  'Manajemen Informatika': [
+    'MI 1A',
+    'MI 1B',
+    'MI 2A',
+    'MI 2B',
+    'MI 3A',
+    'MI 3B',
+    'MI 4A',
+    'MI 4B'
+  ],
+  'Teknik Komputer': [
+    'TK 1A',
+    'TK 1B',
+    'TK 2A',
+    'TK 2B',
+    'TK 3A',
+    'TK 3B',
+    'TK 4A',
+    'TK 4B'
+  ]
+};
+
+export const kelasList = Object.values(kelasByJurusan).flat();
 
 export const initialMahasiswa = [
   {

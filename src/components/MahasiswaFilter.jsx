@@ -8,14 +8,14 @@ function MahasiswaFilter({ keyword, setKeyword, jurusanFilter, setJurusanFilter,
         <Search size={18} />
         <input
           type="text"
-          placeholder="Cari nama, NIM, jurusan, atau kelas..."
+          placeholder="Cari nama, NIM, program studi, atau kelas..."
           value={keyword}
           onChange={(event) => setKeyword(event.target.value)}
         />
       </div>
 
       <select value={jurusanFilter} onChange={(event) => setJurusanFilter(event.target.value)}>
-        <option value="Semua">Semua Jurusan</option>
+        <option value="Semua">Semua Program Studi</option>
         {jurusanList.map((jurusan) => (
           <option key={jurusan} value={jurusan}>{jurusan}</option>
         ))}

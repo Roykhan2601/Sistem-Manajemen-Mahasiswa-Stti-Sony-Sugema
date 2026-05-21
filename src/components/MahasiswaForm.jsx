@@ -1,5 +1,5 @@
 import { Save, X } from 'lucide-react';
-import { jurusanList, kelasList } from '../data/sampleData';
+import { jurusanList, kelasByJurusan } from '../data/sampleData';
 
 const emptyForm = {
   nama: '',
@@ -17,8 +17,23 @@ const emptyForm = {
 function MahasiswaForm({ formData, setFormData, onSubmit, onCancelEdit, editMode }) {
   const handleChange = (event) => {
     const { name, value } = event.target;
+
+    if (name === 'jurusan') {
+      const kelasPertama = kelasByJurusan[value]?.[0] || '';
+
+      setFormData((prev) => ({
+        ...prev,
+        jurusan: value,
+        kelas: kelasPertama
+      }));
+
+      return;
+    }
+
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
+  const pilihanKelas = kelasByJurusan[formData.jurusan] || [];
 
   const resetForm = () => {
     setFormData(emptyForm);
@@ -56,15 +71,15 @@ function MahasiswaForm({ formData, setFormData, onSubmit, onCancelEdit, editMode
           </select>
         </label>
         <label>
-          Jurusan
+          Program Studi
           <select name="jurusan" value={formData.jurusan} onChange={handleChange}>
             {jurusanList.map((jurusan) => <option key={jurusan} value={jurusan}>{jurusan}</option>)}
           </select>
         </label>
         <label>
           Kelas
-          <select name="kelas" value={formData.kelas} onChange={handleChange}>
-            {kelasList.map((kelas) => <option key={kelas} value={kelas}>{kelas}</option>)}
+          <select name="kelas" value={formData.kelas} onChange={handleChange} disabled={!formData.jurusan}>
+            {pilihanKelas.map((kelas) => <option key={kelas} value={kelas}>{kelas}</option>)}
           </select>
         </label>
         <label>

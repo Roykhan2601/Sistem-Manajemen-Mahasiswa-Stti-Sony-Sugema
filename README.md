@@ -6,14 +6,14 @@ Aplikasi web Sistem Manajemen Mahasiswa untuk proyek Ujian Tengah Semester mata 
 
 - Login Admin dan User
 - Dashboard akademik
-- Statistik jumlah mahasiswa, jurusan, kelas, dan mahasiswa aktif
+- Statistik jumlah mahasiswa, program studi, kelas, dan mahasiswa aktif
 - CRUD data mahasiswa khusus Admin
 - User dapat melihat daftar, detail, pencarian, dan filter mahasiswa
 - Form input mahasiswa
 - Tabel data mahasiswa
 - Modal detail mahasiswa
-- Pencarian berdasarkan nama, NIM, jurusan, dan kelas
-- Filter berdasarkan jurusan dan status
+- Pencarian berdasarkan nama, NIM, program studi, dan kelas
+- Filter berdasarkan program studi dan status
 - LocalStorage sebagai penyimpanan data lokal
 - JavaScript OOP dengan class Mahasiswa
 - React Functional Component
@@ -21,6 +21,8 @@ Aplikasi web Sistem Manajemen Mahasiswa untuk proyek Ujian Tengah Semester mata 
 - UI responsif dan mobile-friendly
 
 ## Akun Login
+
+Form login dibuat satu halaman tanpa pilihan role. Sistem otomatis membaca hak akses berdasarkan username dan password.
 
 ### Admin
 
@@ -38,7 +40,7 @@ Username: user
 Password: user123
 ```
 
-User hanya dapat melihat dashboard, daftar mahasiswa, pencarian, filter, dan detail mahasiswa.
+User hanya dapat melihat dashboard, daftar mahasiswa, pencarian, filter, dan detail mahasiswa. User tidak dapat menambah, mengedit, menghapus, atau reset data.
 
 ## Teknologi yang Digunakan
 
@@ -126,7 +128,7 @@ Aplikasi ini membantu pengelolaan data mahasiswa secara sederhana. Admin dapat m
 ```txt
 Mulai
   ↓
-Login sebagai Admin atau User
+Login menggunakan satu form
   ↓
 Validasi username, password, dan role
   ↓
@@ -188,7 +190,7 @@ feat: menambahkan tabel mahasiswa
 feat: menambahkan fitur edit data
 feat: menambahkan fitur hapus data
 feat: menambahkan fitur pencarian
-feat: menambahkan filter jurusan dan status
+feat: menambahkan filter program studi dan status
 style: memperbaiki tampilan responsive
 fix: memperbaiki validasi form
 ```

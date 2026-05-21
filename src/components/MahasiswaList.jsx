@@ -17,7 +17,7 @@ function MahasiswaList({ data, onDetail, onEdit, onDelete, isAdmin }) {
             <tr>
               <th>Mahasiswa</th>
               <th>NIM</th>
-              <th>Jurusan</th>
+              <th>Program Studi</th>
               <th>Kelas</th>
               <th>Semester</th>
               <th>Status</th>

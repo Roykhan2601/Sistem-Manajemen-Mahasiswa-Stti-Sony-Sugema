@@ -1185,3 +1185,13 @@ th {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Login satu form tanpa pilihan role */
+.single-login-card .login-card-header {
+  margin-bottom: 28px;
+}
+
+.single-login-card .login-form {
+  margin-top: 0;
+}

@@ -21,7 +21,7 @@ function MahasiswaDetail({ mahasiswa, onClose }) {
         <div className="detail-grid">
           <div><strong>NIM</strong><span>{mahasiswa.nim}</span></div>
           <div><strong>Jenis Kelamin</strong><span>{mahasiswa.jenisKelamin}</span></div>
-          <div><strong>Jurusan</strong><span>{mahasiswa.jurusan}</span></div>
+          <div><strong>Program Studi</strong><span>{mahasiswa.jurusan}</span></div>
           <div><strong>Kelas</strong><span>{mahasiswa.kelas}</span></div>
           <div><strong>Semester</strong><span>{mahasiswa.semester}</span></div>
           <div><strong>Status</strong><span>{mahasiswa.status}</span></div>
