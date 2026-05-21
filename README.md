@@ -194,7 +194,7 @@ feat: menambahkan filter program studi dan status
 style: memperbaiki tampilan responsive
 fix: memperbaiki validasi form
 ```
-
+Project ini dibuat untuk memenuhi tugas UTS Pemrograman Web Berbasis Framework.
 ## Catatan Revisi
 
 Pada versi ini, halaman API Eksternal dan halaman Panduan Git sudah dihapus dari sidebar aplikasi sesuai permintaan. Panduan Git tetap disimpan di README agar masih bisa dipakai untuk kebutuhan pengumpulan UTS.
